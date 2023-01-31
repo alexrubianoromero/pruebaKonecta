@@ -27,9 +27,6 @@ function btnNuevoPropietario()
     http.onreadystatechange = function(){
         if(this.readyState == 4 && this.status ==200){
             console.log(this.responseText);
-            // document.getElementById("headerNuevoCliente").style.backgroundColor="gray"
-            // document.getElementById("footerNuevoCliente").style.backgroundColor="gray"
-            // document.getElementById("cuerpoModalClientes").style.backgroundColor="gray"
             document.getElementById("cuerpoModalClientes").innerHTML = this.responseText;
         }
     };
@@ -57,9 +54,6 @@ function btnGrabarCodigo()
     http.onreadystatechange = function(){
         if(this.readyState == 4 && this.status ==200){
             console.log(this.responseText);
-            // document.getElementById("headerNuevoCliente").style.backgroundColor="gray"
-            // document.getElementById("footerNuevoCliente").style.backgroundColor="gray"
-            // document.getElementById("cuerpoModalClientes").style.backgroundColor="gray"
             document.getElementById("cuerpoModalClientes").innerHTML = this.responseText;
         }
     };
@@ -165,9 +159,6 @@ function btnActualizarCodigo()
     http.onreadystatechange = function(){
         if(this.readyState == 4 && this.status ==200){
             console.log(this.responseText);
-            // document.getElementById("headerNuevoCliente").style.backgroundColor="gray"
-            // document.getElementById("footerNuevoCliente").style.backgroundColor="gray"
-            // document.getElementById("cuerpoModalClientes").style.backgroundColor="gray"
             document.getElementById("cuerpoModalClientes").innerHTML = this.responseText;
         }
     };

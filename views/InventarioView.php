@@ -27,7 +27,7 @@ class InventarioView
                     </div>
                     <div id="divBotones">
                         <button class="btn btn-primary" id="btnProductos" onclick="listarMenuProductos();">INVENTARIO </button>
-                        <button class="btn btn-primary">VENTAS </button>
+                        <button class="btn btn-primary" id = btnVentas onclick="listarVentas();">VENTAS </button>
                     </div>
                     <br>
                     <div id ="divResultados"></div>
@@ -38,6 +38,7 @@ class InventarioView
             <script src = "js/jquery-2.1.1.js"> </script>    
             <script src="js/bootstrap.min.js"></script>
             <script src="js/app.js"></script>
+            <script src="js/ventas.js"></script>
         <?php
     }
     public function mainViewCode($codes)
@@ -93,7 +94,7 @@ class InventarioView
                   <div class="modal-content">
                   <div class="modal-header" id="headerNuevoCliente">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Nuevo Codigo</h4>
+                      <h4 class="modal-title" id="myModalLabel">Agregar</h4>
                   </div>
                   <div id="cuerpoModalClientes" class="modal-body">
                       

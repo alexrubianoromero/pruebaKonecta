@@ -77,9 +77,45 @@ class CodigosModel extends Conexion
       $conexion = $this->connectMysql();
       $sql = "delete from codigos where id = '".$id."' ";
       $consulta = mysql_query($sql,$conexion);  
-
+      
       echo 'Codigo Eliminado';
+    }
+    
+    public function traerCodigos()
+    {
+       $conexion = $this->connectMysql();
+       $sql = "select * from codigos order by nombre ";
+       $consulta = mysql_query($sql,$conexion); 
+     
+    return $consulta;
+
+
    }
+
+   public function verifiqueStock($request)
+   {
+       $conexion = $this->connectMysql();
+       $sql = "select stock from codigos where id =  '".$request['idCodigo']."'  ";
+       $consulta = mysql_query($sql,$conexion); 
+       $respu = mysql_fetch_assoc($consulta); 
+       return $respu;
+    }
+    
+   
+    
+    
+    public function descontarInventario($request)
+    {
+       $conexion = $this->connectMysql();
+       $stock = $this->verifiqueStock($request);
+       $saldo = $stock - $request['txtcantidad'];
+       $sql = "update codigos set stock = '".$saldo."' where  id = '".$request['id']."' "; 
+       $consulta = mysql_query($sql,$conexion); 
+
+   }
+
+
+
 
 }
 

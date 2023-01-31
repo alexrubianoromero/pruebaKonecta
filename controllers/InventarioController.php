@@ -41,7 +41,7 @@ class InventarioController
         if( $_REQUEST['option'] == 'deleteCodigo' ){ 
             $this->deleteCodigo(); 
         }
-
+    
 
     } 
 
@@ -81,6 +81,12 @@ class InventarioController
     { 
         $this->model->deleteCodigo($_REQUEST['id']);
     }
+    public function descontarInventario()
+    { 
+        $this->model->descontarInventario($_REQUEST);
+
+    }
+
 
 
 
