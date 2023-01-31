@@ -23,8 +23,7 @@ class VentasView
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Fecha Creacion</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+           
             </thead>
             <tbody>
         <?php
@@ -37,8 +36,6 @@ class VentasView
                 echo '<td>'.$codigo['nombre'].'</td>';
                 echo '<td>'.$item['cantidad'].'</td>';
                 echo '<td>'.$item['fecha'].'</td>';
-                echo '<td><button class="editar" value="'.$item['id'].'" onclick="editCode('.$item['id'].');"   data-toggle="modal" data-target="#myModalClientes" >Editar</button></td>';
-                echo '<td><button class="eliminar" value="'.$item['id'].'" onclick="deleteCode('.$item['id'].');"   data-toggle="modal" data-target="#myModalClientes">Eliminar</button></td>';
                 echo '</tr>';
         }
         echo '</table>';

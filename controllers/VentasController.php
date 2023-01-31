@@ -50,7 +50,13 @@ class VentasController
     }
     public function grabarVenta()
     {
-        $this->model->grabarVenta($_REQUEST);
+        //control antes de grabar venta
+        $stock = $this->codModel->verifiqueStock($_REQUEST);
+        if($stock['stock'] > 0){
+            $this->model->grabarVenta($_REQUEST);
+        }else{
+            echo 'No es posible realizar la venta porque nel stock es cero o inferior a cero '; 
+        }
     }
     public function verifiqueStock()
     {
@@ -59,7 +65,14 @@ class VentasController
     }
     public function descontarInventario()
     {
-        $this->codModel->descontarInventario($_REQUEST);
+        $stock = $this->codModel->verifiqueStock($_REQUEST);
+        if($stock['stock'] > 0)
+        {
+            $this->codModel->descontarInventario($_REQUEST);
+        }
+        else{
+            echo 'No es posible realizar la venta porque nel stock es cero o inferior a cero '; 
+        }
     }
 }
 
