@@ -38,7 +38,6 @@ function btnGrabarVenta()
     var validacion = validacionesVenta();
     if(validacion)
     {
-
         var idCodigo = document.getElementById("idCodigo").value;
         var txtcantidad = document.getElementById("txtcantidad").value;
         var txtfecha = document.getElementById("txtfecha").value;
@@ -119,7 +118,7 @@ function descontarInventario(id,txtcantidad)
         http.open("POST",url);
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         http.send("option=descontarInventario"
-        + "&idCodigo="+idCodigo
+        + "&idCodigo="+id
         + "&txtcantidad="+txtcantidad
         );
 

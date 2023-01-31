@@ -30,6 +30,7 @@ class VentasModel extends Conexion
         $sql = "insert into ventas (idProducto,cantidad,fecha) 
         values ('".$request['idCodigo']."','".$request['txtcantidad']."','".$request['txtfecha']."')";
         $consulta = mysql_query($sql,$conexion); 
+        echo 'Venta grabada ';
     }
     
    

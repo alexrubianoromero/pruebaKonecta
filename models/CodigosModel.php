@@ -106,10 +106,21 @@ class CodigosModel extends Conexion
     
     public function descontarInventario($request)
     {
+        //viene el codigo y la cantidad
+        //idCodigo
+        //txtcantidad 
+        //   echo '<pre>'; 
+        // print_r($request);
+        // echo '</pre>';
+        // die();
        $conexion = $this->connectMysql();
        $stock = $this->verifiqueStock($request);
-       $saldo = $stock - $request['txtcantidad'];
-       $sql = "update codigos set stock = '".$saldo."' where  id = '".$request['id']."' "; 
+        //  echo '<pre>'; 
+        // print_r($stock);
+        // echo '</pre>';
+        // die();
+       $saldo = $stock['stock'] - $request['txtcantidad'];
+       $sql = "update codigos set stock = '".$saldo."' where  id = '".$request['idCodigo']."' "; 
        $consulta = mysql_query($sql,$conexion); 
 
    }
